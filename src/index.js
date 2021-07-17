@@ -15,6 +15,7 @@ currentDayTime.innerHTML = dayTime;
 //
 
 function showTemperature(response) {
+    document.querySelector("#search-input").value = "";
     document.querySelector("#city").innerHTML = response.data.name;
     document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
     document.querySelector("#conditions").innerHTML = response.data.weather[0].main;
