@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f8fba63b40.js" crossorigin="anonymous"></script>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="bottom-container">
+      <div class="top-container">
+        <form id="city-search">
+          <div class="row searchbox">
+            <input type="text" class="col-9 searchbox-main" id="search-input" autocomplete="off" />
+            <input type="submit" value="Search" class="col-2 button searchbox-button" />
+            <button class="col-1 button" id="current-location-button"><i class="fas fa-map-marker-alt pin"></i></button>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col-8">
+            <h2 id="city"></h2>
+            <h3 id="conditions"></h3>
+          </div>
+          <div class="col-4">
+            <p id="day-time">Sunday 11:00am</p>
+          </div>
+        </div>
+        <div class="row current-data">
+          <div class="col-5 main-temp-container">
+            <span class="temperature" id="temperature"></span>
+            <span class="degrees">
+              <a href="#" id="centigrade">°C</a>
+              <span class="degree-divider">|</span>
+              <a href="#" id="fahrenheit">°F</a>
+            </span>
+          </div>
+          <div class="col-2 weather-icon-container">
+            <img src="images/partly-cloudy-pink.png" alt="partly-cloudy" class="main-weather-icon" id="weather-icon">
+          </div>
+          <div class="col-5">
+            <ul class="weather-data">
+              <li>Feels Like: <span id="feels-like"></span>°</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span>kmh</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="forecast-data">
+        <div class="row weekdays">
+          <div class="col-2">
+            <p>Sun</p>
+          </div>
+          <div class="col-2">
+            <p>Mon</p>
+          </div>
+          <div class="col-2">
+            <p>Tue</p>
+          </div>
+          <div class="col-2">
+            <p>Wed</p>
+          </div>
+          <div class="col-2">
+            <p>Thu</p>
+          </div>
+          <div class="col-2">
+            <p>Fri</p>
+          </div>
+        </div>
+        <div class="row weather-icons">
+          <div class="col-2">
+            <img src="images/partly-cloudy-pink.png" alt="partly-cloudy">
+          </div>
+          <div class="col-2">
+            <img src="images/SunnyPink-01.png" alt="sunny">
+          </div>
+          <div class="col-2">
+            <img src="images/partly-cloudy-pink.png" alt="partly-cloudy">
+          </div>
+          <div class="col-2">
+            <img src="images/rain-pink.png" alt="rain">
+          </div>
+          <div class="col-2">
+            <img src="images/SunnyPink-01.png" alt="sunny">
+          </div>
+          <div class="col-2">
+            <img src="images/partly-cloudy-pink.png" alt="partly-cloudy">
+          </div>
+        </div>
+        <div class="row weekday-temperatures">
+          <div class="col-2">
+            <p>20°<span>/15°</span></p>
+          </div>
+          <div class="col-2">
+            <p>23°<span>/19°</span></p>
+          </div>
+          <div class="col-2">
+            <p>21°<span>/18°</span></p>
+          </div>
+          <div class="col-2">
+            <p>18°<span>/12°</span></p>
+          </div>
+          <div class="col-2">
+            <p>24°<span>/17°</span></p>
+          </div>
+          <div class="col-2">
+            <p>23°<span>/17°</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
